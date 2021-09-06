@@ -20,15 +20,11 @@ storeSRTree(float *xb, const char *ft, int nb, int dimension, HnBool debug)
   RecordData record_data;
   FILE *fp;
 
-  int dataSize, blockSize;
-  int splitFactor, reinsertFactor;
-  dataSize = sizeof(RecordData);
-  blockSize = 1024 * dimension;
+  int dataSize = sizeof(RecordData);
+  int blockSize = 1024 * dimension;
 
-  splitFactor = 40;
-  reinsertFactor = 30;
-
-  dimension = 110;
+  int splitFactor = 40;
+  int reinsertFactor = 30;
 
   tree_file = new_HnSRTreeFile(ft, dimension, dataSize, blockSize,
                                splitFactor, reinsertFactor);
